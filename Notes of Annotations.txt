@@ -1,0 +1,40 @@
+
+
+@Autowired
+==========
+=> searches on the based on the type
+
+
+=> To make one class's object is a part of another class we uses autowired annotion 
+=> this is used for dependency injection there are 3 types of dependency injection 
+1. field  => @autowired annotation is used on the class data member name
+2. constructor => @autowired annotation is used on the constructor 
+3. setter injection =>  @autowired annotation is used on the setter method of that field 
+
+For Loose coupling we creates an interface and we can implement classes using it 
+===========================================================================
+becaus @Autowired ==> not works on the name actually it works on the type .
+=====================================================================
+
+what will happen if we create interface and that is implemented in two diff classes 
+and we try to autowired that interface with field then which method will be called 
+
+==> then confusion occures and it produces error .
+To solve this problem we can use another notation 
+error
+=====
+'comp': No qualifying bean of type 'com.example.demo.IComputer' available: expected single matching bean but found 2: desktop,lap1
+
+
+1.solution 
+==========
+@Primary
+========
+==> in case of confusion this class will be part of your field means which is used as autowired.
+If no qualifier is specified then it uses primay component.
+
+2. We can use @Qualifier(name of the class with lower case)
+==> this tells to the springboot that which component of the spring container we have to use.
+
+
+

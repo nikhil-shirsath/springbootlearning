@@ -1,9 +1,11 @@
 package com.example.demo;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component("lap1")
-public class Laptop {
+@Primary
+public class Laptop implements IComputer {
 
 	private String lName;
 	private int lRam;
@@ -28,7 +30,7 @@ public class Laptop {
 	}
 	
 	public void compile() {
-		System.out.println("compilation of the code is going on ");
+		System.out.println("compilation of the code is going on  Laptop. ");
 	}
 	
 	@Override

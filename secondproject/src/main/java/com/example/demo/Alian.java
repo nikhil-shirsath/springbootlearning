@@ -15,34 +15,52 @@ public class Alian {
 	private String aname;
 	private int age ;
 	
+	/************ field injection   *************/
+	
+	
 	//I want that i can call comiping method of laptop class init .
 	// Its part of another class so how can i call it .
 	// For that autowired is comes in the picture
 	@Autowired //this tells the alian class that we have a componenet of named laptop go and search for it. 
 	//If we not uses this autowired keyword then our code gets null pointer exeption. 
-	@Qualifier("lap1") // this searches component based on the name given in it // to use it we should also give name to the component 
-	private Laptop laptop;
-	
-	
-	
-	public Alian() {
-		System.out.println("inside the Alian constructor object crated ");
-	}
-	
-	
-	public Laptop getLaptop() {
-		return laptop;
-	}
+	//@Qualifier("lap1") // this searches component based on the name given in it // to use it we should also give name to the component 
+//	private Laptop laptop;
 
+	@Qualifier("desktop")
+	private IComputer comp;
+	
+	/********** Constructor injection **********/
+//	@Autowired
+//	public Alian(Laptop laptop) {
+//		this.laptop = laptop;
+//		System.out.println("inside the Alian constructor object crated ");
+//	}
+	
+	
+//	public IComputer getLaptop() {
+//		return laptop;
+//	}
+//
+//	/********** Setter injection **************/
+////	@Autowired
+//	public void setLaptop(Laptop laptop) {
+//		this.laptop = laptop;
+//	}
 
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
-	}
-
+	
+	
 
 	public int getAid() {
 		return aid;
 	}
+	public IComputer getComp() {
+		return comp;
+	}
+	public void setComp(IComputer comp) {
+		this.comp = comp;
+	}
+	
+	
 	public void setAid(int aid) {
 		this.aid = aid;
 	}
@@ -61,7 +79,7 @@ public class Alian {
 	
 	public void show() {
 	System.out.println("in show method ");
-	laptop.compile();
+	comp.compile();
 	}
 
 }
