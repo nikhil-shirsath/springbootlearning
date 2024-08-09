@@ -1,0 +1,2 @@
+no qualifying bean of type com.example.className  ==> means we dont have make that that class to part of container to make it,
+ we Must use @COMPONENT  annotation on the name of that class 

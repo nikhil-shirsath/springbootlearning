@@ -1,0 +1,17 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+@SpringBootApplication
+public class SecondprojectApplication {
+
+	public static void main(String[] args) {
+	ConfigurableApplicationContext context =	SpringApplication.run(SecondprojectApplication.class, args);
+//		Alian a = new Alian(); // this is tyght coupling which we dont want
+	
+	Alian a = context.getBean(Alian.class);
+	}
+
+}
